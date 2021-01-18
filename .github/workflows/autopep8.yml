@@ -1,7 +1,5 @@
 name: Format python code
-on:
-  repository_dispatch:
-    types: [autopep8-example-command]
+on: push
 jobs:
   autopep8:
     runs-on: ubuntu-latest
