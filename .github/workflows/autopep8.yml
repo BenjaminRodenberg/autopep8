@@ -8,4 +8,4 @@ jobs:
       - name: autopep8
         uses: ./
         with:
-          args: --recursive --diff --aggressive --aggressive --exclude example/example.py .
+          args: --recursive --diff --aggressive --aggressive --exclude ./example/example.py .
