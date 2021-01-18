@@ -8,4 +8,9 @@ jobs:
       - name: autopep8
         uses: ./
         with:
-          args: --recursive --diff --aggressive --aggressive --exclude ./example/example.py .
+          args: --recursive --diff --aggressive --aggressive --exit-code --exclude ./example/example.py .
+      - name: Fail if autopep8 made changes
+        if: ${{ steps.autopep8.outputs.exit-code }} == 2
+        run: |
+          echo ${{ steps.autopep8.outputs.exit-code }}
+          exit 1
