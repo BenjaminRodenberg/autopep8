@@ -6,6 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: autopep8
+        id: autopep8
         uses: ./
         with:
           args: --recursive --diff --aggressive --aggressive --exit-code --exclude ./example/example.py .
